@@ -1,0 +1,48 @@
+2022-07-17 23:49:44.266 +02:00 [Information] User profile is available. Using '"C:\Users\Marin\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-17 23:49:45.180 +02:00 [Information] Entity Framework Core "6.0.7" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.7"' with options: "None"
+2022-07-17 23:49:45.576 +02:00 [Information] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-07-17 23:49:45.619 +02:00 [Information] Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-07-17 23:49:45.651 +02:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-07-17 23:49:46.004 +02:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [VehicleMake] AS [v]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2022-07-17 23:49:46.010 +02:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [VehicleModel] AS [v]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2022-07-17 23:49:46.417 +02:00 [Information] Now listening on: "https://localhost:7135"
+2022-07-17 23:49:46.419 +02:00 [Information] Now listening on: "http://localhost:5135"
+2022-07-17 23:49:46.427 +02:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-07-17 23:49:46.429 +02:00 [Information] Hosting environment: "Development"
+2022-07-17 23:49:46.431 +02:00 [Information] Content root path: "C:\Git\MVCProject\Vehicle\Service\"
+2022-07-17 23:49:47.125 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger - -
+2022-07-17 23:49:47.248 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger - - - 301 0 - 125.5402ms
+2022-07-17 23:49:47.251 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/index.html - -
+2022-07-17 23:49:47.519 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/index.html - - - 200 - text/html;charset=utf-8 267.4957ms
+2022-07-17 23:49:47.520 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/swagger-ui-bundle.js - -
+2022-07-17 23:49:47.520 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/swagger-ui-standalone-preset.js - -
+2022-07-17 23:49:47.520 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/_framework/aspnetcore-browser-refresh.js - -
+2022-07-17 23:49:47.520 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/swagger-ui.css - -
+2022-07-17 23:49:47.530 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/_vs/browserLink - -
+2022-07-17 23:49:47.532 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 11.9429ms
+2022-07-17 23:49:47.560 +02:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2022-07-17 23:49:47.579 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/swagger-ui.css - - - 200 143943 text/css 58.8738ms
+2022-07-17 23:49:47.588 +02:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2022-07-17 23:49:47.589 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 68.9325ms
+2022-07-17 23:49:47.598 +02:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2022-07-17 23:49:47.598 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 78.7394ms
+2022-07-17 23:49:47.617 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 87.2725ms
+2022-07-17 23:49:47.763 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/v1/swagger.json - -
+2022-07-17 23:49:47.864 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 102.0193ms
