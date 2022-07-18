@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Service.AutoMapper;
 using Service.DbContext;
 using Service.Interfaces;
 using Service.Models;

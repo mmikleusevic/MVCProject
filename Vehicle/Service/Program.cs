@@ -6,11 +6,7 @@ using Service.DbContext;
 using Service.DbContext.Seed;
 using Service.Interfaces;
 using Service.Models;
-using Service.Ninject;
 using Service.Services;
-using System.Web.Mvc;
-
-DependencyResolver.SetResolver(new NinjectDependencyResolver());
 
 Log.Logger = new LoggerConfiguration()
       .Enrich.FromLogContext()
@@ -37,8 +33,10 @@ var mapper = config.CreateMapper();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<IVehicleRepository, EFVehicleRepository>();
 builder.Services.AddScoped<IVehicleService, VehicleService>();
+
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 builder.Services.AddSingleton(mapper);
 
