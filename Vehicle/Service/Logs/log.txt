@@ -192,3 +192,67 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY"
 2022-07-18 21:47:13.912 +02:00 [Information] Executed action "Service.Controllers.VehicleMakesController.GetVehicleMakes (Service)" in 2760.2051ms
 2022-07-18 21:47:13.913 +02:00 [Information] Executed endpoint '"Service.Controllers.VehicleMakesController.GetVehicleMakes (Service)"'
 2022-07-18 21:47:13.921 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/api/VehicleMakes - - - 200 - application/json;+charset=utf-8 2805.4788ms
+2022-07-18 21:53:53.157 +02:00 [Information] User profile is available. Using '"C:\Users\Marin\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-07-18 21:53:54.402 +02:00 [Information] Entity Framework Core "6.0.7" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.7"' with options: "None"
+2022-07-18 21:53:55.106 +02:00 [Information] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-07-18 21:53:55.154 +02:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-07-18 21:53:55.188 +02:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-07-18 21:53:55.603 +02:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [VehicleMake] AS [v]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2022-07-18 21:53:55.610 +02:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [VehicleModel] AS [v]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2022-07-18 21:53:55.793 +02:00 [Information] Now listening on: "https://localhost:7135"
+2022-07-18 21:53:55.794 +02:00 [Information] Now listening on: "http://localhost:5135"
+2022-07-18 21:53:55.802 +02:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-07-18 21:53:55.803 +02:00 [Information] Hosting environment: "Development"
+2022-07-18 21:53:55.805 +02:00 [Information] Content root path: "C:\Git\MVCProject\Vehicle\Service\"
+2022-07-18 21:53:56.625 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger - -
+2022-07-18 21:53:56.709 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger - - - 301 0 - 87.0202ms
+2022-07-18 21:53:56.716 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/index.html - -
+2022-07-18 21:53:56.899 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/swagger-ui-standalone-preset.js - -
+2022-07-18 21:53:56.899 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/swagger-ui-bundle.js - -
+2022-07-18 21:53:56.899 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/_framework/aspnetcore-browser-refresh.js - -
+2022-07-18 21:53:56.899 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/swagger-ui.css - -
+2022-07-18 21:53:56.903 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/index.html - - - 200 - text/html;charset=utf-8 186.7931ms
+2022-07-18 21:53:56.905 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 5.5796ms
+2022-07-18 21:53:56.905 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/_vs/browserLink - -
+2022-07-18 21:53:56.922 +02:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2022-07-18 21:53:56.922 +02:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2022-07-18 21:53:56.922 +02:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2022-07-18 21:53:56.922 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/swagger-ui.css - - - 200 143943 text/css 22.6446ms
+2022-07-18 21:53:56.922 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 23.3371ms
+2022-07-18 21:53:56.922 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 23.3387ms
+2022-07-18 21:53:56.925 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.7428ms
+2022-07-18 21:53:57.105 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/swagger/v1/swagger.json - -
+2022-07-18 21:53:57.199 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 94.4349ms
+2022-07-18 21:54:00.324 +02:00 [Information] Request starting HTTP/2 GET https://localhost:7135/api/VehicleMakes - -
+2022-07-18 21:54:00.334 +02:00 [Information] Executing endpoint '"Service.Controllers.VehicleMakesController.GetVehicleMakes (Service)"'
+2022-07-18 21:54:00.356 +02:00 [Information] Route matched with "{action = \"GetVehicleMakes\", controller = \"VehicleMakes\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVehicleMakes(System.String, System.String, System.Nullable`1[System.Int32], System.String)" on controller "Service.Controllers.VehicleMakesController" ("Service").
+2022-07-18 21:54:05.041 +02:00 [Information] Entity Framework Core "6.0.7" initialized '"ApplicationDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.7"' with options: "None"
+2022-07-18 21:54:05.140 +02:00 [Information] Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [VehicleMake] AS [v]"
+2022-07-18 21:54:05.248 +02:00 [Information] Executed DbCommand ("33"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [v].[Id], [v].[Abrv], [v].[Name]
+FROM [VehicleMake] AS [v]
+ORDER BY [v].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY"
+2022-07-18 21:54:05.283 +02:00 [Information] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[Service.Models.Dto.VehicleMakeDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2022-07-18 21:54:05.293 +02:00 [Information] Executed action "Service.Controllers.VehicleMakesController.GetVehicleMakes (Service)" in 4931.6075ms
+2022-07-18 21:54:05.294 +02:00 [Information] Executed endpoint '"Service.Controllers.VehicleMakesController.GetVehicleMakes (Service)"'
+2022-07-18 21:54:05.303 +02:00 [Information] Request finished HTTP/2 GET https://localhost:7135/api/VehicleMakes - - - 200 - application/json;+charset=utf-8 4978.6478ms
