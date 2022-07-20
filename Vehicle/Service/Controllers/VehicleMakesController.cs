@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Service.DbContext;
-using Service.Interfaces;
 using Service.Models.Dto;
+using Service.Services.VehicleMake;
 
 namespace Service.Controllers
 {
@@ -10,12 +10,12 @@ namespace Service.Controllers
     public class VehicleMakesController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly IVehicleService _vehicleService;
+        private readonly IVehicleMakeService _vehicleService;
         private readonly ILogger<VehicleMakesController> _logger;
 
         public VehicleMakesController(
             ApplicationDbContext context, 
-            IVehicleService vehicleService, 
+            IVehicleMakeService vehicleService, 
             ILogger<VehicleMakesController> logger)
         {
             _context = context;
@@ -108,17 +108,18 @@ namespace Service.Controllers
         {
             try
             {
-                if (id == vehicleMake.Id)
+                if (id != vehicleMake.Id)
                 {
                     return BadRequest("Vehicle make ID mismatch");
                 }
-                var existing = _vehicleService.GetVehicleMake(vehicleMake.Id);
 
-                if(existing == null)
+                if(vehicleMake == null)
                 {
                     return NotFound($"Vehicle make with Id = {id} not found");
                 }
-                return Ok(await _vehicleService.UpdateVehicleMake(vehicleMake));
+                await _vehicleService.UpdateVehicleMake(vehicleMake);
+
+                return Ok($"Vehicle make with Id = {id} updated");
             }
             catch (Exception ex)
             {

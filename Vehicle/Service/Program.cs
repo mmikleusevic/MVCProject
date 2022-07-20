@@ -4,9 +4,8 @@ using Serilog;
 using Service.AutoMapper;
 using Service.DbContext;
 using Service.DbContext.Seed;
-using Service.Interfaces;
-using Service.Models;
-using Service.Services;
+using Service.Services.VehicleMake;
+using Service.Services.VehicleModel;
 
 Log.Logger = new LoggerConfiguration()
       .Enrich.FromLogContext()
@@ -34,8 +33,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IVehicleRepository, EFVehicleRepository>();
-builder.Services.AddScoped<IVehicleService, VehicleService>();
+builder.Services.AddScoped<IVehicleMakeService, VehicleMakeService>();
+builder.Services.AddScoped<IVehicleModelService, VehicleModelService>();
 
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 builder.Services.AddSingleton(mapper);

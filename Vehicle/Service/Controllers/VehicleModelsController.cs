@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Service.DbContext;
-using Service.Interfaces;
 using Service.Models.Dto;
+using Service.Services.VehicleModel;
 
 namespace Service.Controllers
 {
@@ -9,17 +8,13 @@ namespace Service.Controllers
     [ApiController]
     public class VehicleModelsController : Controller
     {
-
-        private readonly ApplicationDbContext _context;
-        private readonly IVehicleService _vehicleService;
+        private readonly IVehicleModelService _vehicleService;
         private readonly ILogger<VehicleMakesController> _logger;
 
         public VehicleModelsController(
-            ApplicationDbContext context, 
-            IVehicleService vehicleService, 
+            IVehicleModelService vehicleService, 
             ILogger<VehicleMakesController> logger)
         {
-            _context = context;
             _vehicleService = vehicleService;
             _logger = logger;
         }
@@ -50,7 +45,7 @@ namespace Service.Controllers
         {
             try
             {
-                if (id == null || _context.VehicleModel == null)
+                if (id == null)
                 {
                     return NotFound($"Vehicle model with Id = {id} not found");
                 }
@@ -72,23 +67,23 @@ namespace Service.Controllers
 
         // POST: VehicleModel/Create
         [HttpPost]
-        public async Task<IActionResult> AddVehicleModel(VehicleModelDto vehicleMake)
+        public async Task<IActionResult> AddVehicleModel(VehicleModelDto vehicleModel)
         {
             try
             {
-                if (vehicleMake == null)
+                if (vehicleModel == null)
                 {
                     return BadRequest();
                 }
 
-                var existing = await _vehicleService.GetVehicleModel(vehicleMake.Id);
+                var existing = await _vehicleService.GetVehicleModel(vehicleModel.Id);
                 if (existing != null)
                 {
                     ModelState.AddModelError("Id", "Vehicle model already exists");
                     return BadRequest(ModelState);
                 }
 
-                var result = await _vehicleService.AddVehicleModel(vehicleMake);
+                var result = await _vehicleService.AddVehicleModel(vehicleModel);
 
                 return Ok(View(result));
 
@@ -104,21 +99,22 @@ namespace Service.Controllers
 
         // POST: VehicleMakes/Update/5
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateVehicleModel(int id, VehicleModelDto vehicleMake)
+        public async Task<IActionResult> UpdateVehicleModel(int id, VehicleModelDto vehicleModel)
         {
             try
             {
-                if (id == vehicleMake.Id)
+                if (id != vehicleModel.Id)
                 {
                     return BadRequest("Vehicle model ID mismatch");
                 }
-                var existing = _vehicleService.GetVehicleModel(vehicleMake.Id);
 
-                if (existing == null)
+                if (vehicleModel == null)
                 {
                     return NotFound($"Vehicle model with Id = {id} not found");
                 }
-                return Ok(await _vehicleService.UpdateVehicleModel(vehicleMake));
+                await _vehicleService.UpdateVehicleModel(vehicleModel);
+
+                return Ok($"Vehicle model with Id = {id} updated");
             }
             catch (Exception ex)
             {

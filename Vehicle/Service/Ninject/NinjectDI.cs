@@ -1,7 +1,6 @@
 ﻿using Ninject.Modules;
-using Service.Interfaces;
-using Service.Models;
-using Service.Services;
+using Service.Services.VehicleMake;
+using Service.Services.VehicleModel;
 
 namespace Service.Ninject
 {
@@ -9,8 +8,8 @@ namespace Service.Ninject
     {
         public override void Load()
         {
-            Bind<IVehicleService>().To<VehicleService>();
-            Bind<IVehicleRepository>().To<EFVehicleRepository>();
+            Bind<IVehicleMakeService>().To<VehicleMakeService>();
+            Bind<IVehicleModelService>().To<VehicleModelService>();
         }
     }
 }
